@@ -1,5 +1,9 @@
 # AptSourceTrustAudit
 
+Version **0.1.2**.
+
+New implementation author: **dhtfish98**. Copyright (c) 2026 dhtfish98 applies to the new implementation code. Upstream policy data, original notices and source references retain their original attribution.
+
 APT source format and repository trust configuration audit. Complete independent **new scope**, not the whole upstream system rewritten.
 
 Input: `{"files":{"/etc/apt/sources.list":"deb [signed-by=/etc/apt/keyrings/vendor.gpg] https://packages.example.invalid stable main"},"global_options":{},"global_options_complete":true}`. Both one-line `.list` and multiline/multivalue Deb822 `.sources` are parsed. Enabled:no stanzas are explicitly outside active-source scope. Checks cover required fields/types/components/exact-path suites, duplicate fields/options/repositories, bounded URI/suite/type expansion, scoped signing declarations, insecure/weak/downgrade/trusted overrides, expiry/date/HTTPS verification overrides, transport scheme, embedded credentials, query/fragment scope and unknown settings. Signed-By is only a path/fingerprint declaration: no key file is opened, cryptographic trust checked or network contacted. Embedded keys/fingerprint-only global trust/nonstandard key paths are OPEN. HTTPS is a project transport policy; HTTP still may retain valid APT signature verification. Missing caller assertion of global completeness is OPEN. Repository URIs containing credentials are not echoed in findings.

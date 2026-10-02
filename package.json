@@ -4,5 +4,6 @@
   "command": "apt-source-trust-audit",
   "license": "MIT",
   "description": "APT source format and repository trust configuration audit",
-  "version": "0.1.1"
+  "version": "0.1.2",
+  "author": "dhtfish98"
 }

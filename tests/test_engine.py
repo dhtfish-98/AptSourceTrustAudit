@@ -1,3 +1,5 @@
+# Author: dhtfish98
+# Copyright (c) 2026 dhtfish98
 import unittest
 from apt_source_trust_audit import analyze
 from apt_source_trust_audit.common import InputError

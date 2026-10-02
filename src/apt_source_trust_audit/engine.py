@@ -1,3 +1,5 @@
+# Author: dhtfish98
+# Copyright (c) 2026 dhtfish98
 """Inspect APT source lists/Deb822 and supplied security options without fetching."""
 import re
 import shlex

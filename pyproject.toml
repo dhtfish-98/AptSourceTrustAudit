@@ -5,7 +5,8 @@ backend-path = ["."]
 
 [project]
 name = "apt-source-trust-audit"
-version = "0.1.1"
+version = "0.1.2"
+authors = [{name = "dhtfish98"}]
 requires-python = ">=3.10"
 description = "APT source format and repository trust configuration audit"
 license = {text = "MIT"}
