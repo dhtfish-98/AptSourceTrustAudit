@@ -1,0 +1,6 @@
+{
+  "good.json": 0,
+  "risky.json": 1,
+  "incomplete.json": 3,
+  "malformed.json": 2
+}

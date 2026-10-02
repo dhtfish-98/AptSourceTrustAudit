@@ -1,0 +1,13 @@
+{
+  "batch": "additional-defensive-projects-b-20261002",
+  "reviewed_source_tree_sha256": "9b6bbcb45200674df61cd1a581fa192457a004a97b3e09c13c8cfa7a70e2e2db",
+  "verified_wheel_sha256": "f069e99798243851175760f612c6080e24555b0f63bbf934664a2b555c0c2b73",
+  "publication_transforms": [
+    "Markdown trailing whitespace normalized",
+    "One pinned CI workflow",
+    "Machine-specific validation logs reduced to reproducible public summaries"
+  ],
+  "implementation": "AI-assisted independent implementation of the documented local defensive scope",
+  "source_attribution": "See ORIGIN.md and retained license notices",
+  "application_qualification": "OPEN; no CVP approval claim"
+}

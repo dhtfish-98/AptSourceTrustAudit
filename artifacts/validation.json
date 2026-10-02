@@ -1,0 +1,14 @@
+{
+  "project": "AptSourceTrustAudit",
+  "status": "PASS",
+  "test_count": 14,
+  "wheel": "apt_source_trust_audit-0.1.0-py3-none-any.whl",
+  "wheel_sha256": "f069e99798243851175760f612c6080e24555b0f63bbf934664a2b555c0c2b73",
+  "verification": "Local supported and malformed input tests, wheel build, separate install, imported package origin and CLI checks",
+  "reproduction": [
+    "python -m pip install .",
+    "python -m unittest discover -s tests -v",
+    "python -m pip wheel --no-deps --wheel-dir artifacts ."
+  ],
+  "limits": "Point-in-time engineering evidence only; CVP qualification and approval remain OPEN"
+}

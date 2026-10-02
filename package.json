@@ -1,0 +1,7 @@
+{
+  "distribution": "apt-source-trust-audit",
+  "package": "apt_source_trust_audit",
+  "command": "apt-source-trust-audit",
+  "license": "MIT",
+  "description": "APT source format and repository trust configuration audit"
+}

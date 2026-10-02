@@ -1,0 +1,7 @@
+{
+  "files": {
+    "/etc/apt/sources.list": "deb [signed-by=/etc/apt/keyrings/vendor.gpg] https://packages.example.invalid stable main"
+  },
+  "global_options": {},
+  "global_options_complete": true
+}
