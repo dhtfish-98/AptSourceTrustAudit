@@ -5,6 +5,17 @@ from apt_source_trust_audit.common import InputError
 class AptTests(unittest.TestCase):
     def good(self):return {'files':{'/etc/apt/sources.list':'deb [signed-by=/etc/apt/keyrings/vendor.gpg] https://packages.example.invalid stable main'},'global_options':{},'global_options_complete':True}
     def test_one_line_positive(self):self.assertEqual(analyze(self.good())['status'],'PASS')
+    def test_one_line_enabled_no_does_not_disable_security_checks(self):
+        s=self.good()
+        s['files']['/etc/apt/sources.list']+='\ndeb [enabled=no trusted=yes] https://evil.example.invalid stable main'
+        result=analyze(s)
+        self.assertEqual(result['status'],'FAIL')
+        self.assertTrue(any(f['check']=='trust_bypass' and f['status']=='FAIL' for f in result['findings']))
+        self.assertFalse(any(f['check']=='disabled_source' for f in result['findings']))
+    def test_one_line_enabled_is_unknown_even_with_safe_source(self):
+        s=self.good()
+        s['files']['/etc/apt/sources.list']=s['files']['/etc/apt/sources.list'].replace('signed-by=', 'enabled=no signed-by=')
+        self.assertEqual(analyze(s)['status'],'OPEN')
     def test_deb822_multivalue(self):
         s=self.good();s['files']={'/etc/apt/sources.list.d/vendor.sources':'Types: deb deb-src\nURIs: https://one.example.invalid https://two.example.invalid\nSuites: stable testing\nComponents: main contrib\nSigned-By: /etc/apt/keyrings/a.gpg\n /usr/share/keyrings/b.gpg\n'};self.assertEqual(analyze(s)['status'],'PASS')
     def test_disabled_does_not_parse_active_fields(self):

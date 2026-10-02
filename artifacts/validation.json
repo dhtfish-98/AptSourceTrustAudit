@@ -1,14 +1,20 @@
 {
-  "project": "AptSourceTrustAudit",
+  "name": "AptSourceTrustAudit",
+  "group": "host",
   "status": "PASS",
-  "test_count": 14,
-  "wheel": "apt_source_trust_audit-0.1.0-py3-none-any.whl",
-  "wheel_sha256": "f069e99798243851175760f612c6080e24555b0f63bbf934664a2b555c0c2b73",
-  "verification": "Local supported and malformed input tests, wheel build, separate install, imported package origin and CLI checks",
-  "reproduction": [
-    "python -m pip install .",
-    "python -m unittest discover -s tests -v",
-    "python -m pip wheel --no-deps --wheel-dir artifacts ."
-  ],
-  "limits": "Point-in-time engineering evidence only; CVP qualification and approval remain OPEN"
+  "version": "0.1.1",
+  "test_count": 17,
+  "source_code_sha256": "853fc866d7d616cceca45b548b2022e7d2937de4b4570b19582bd089bcaac61c",
+  "wheel_sha256": "c2ec1abdbee3f80f5718c3a9872d88ef3694e1fa59d853c75d5dd11c7232acda",
+  "source_wheel_installed_bytes": "PASS",
+  "licenses": "PASS",
+  "dependency_check": "PASS",
+  "verified_utc": "2026-10-02T11:20:00.151977+00:00",
+  "wheel": "apt_source_trust_audit-0.1.1-py3-none-any.whl",
+  "verification": "Fresh per-project environment; wheel/source/installed runtime byte comparison; complete installed unittest suite; pip dependency check; license byte checks",
+  "runtime_platform": "Python 3.14 macOS arm64; remote Linux CI recorded separately",
+  "application_qualification": "OPEN",
+  "whole_upstream_equivalence": "OPEN",
+  "effective_deployed_protection": "OPEN",
+  "record_kind": "Current repaired release verification"
 }

@@ -69,16 +69,17 @@ def analyze(snapshot):
         report.check('global_override',boolean(value,key)==expected,key,'Global trust/transport/time override')
     rows=[]
     for path,text in files.items():
-        if path.endswith('.sources'):rows.extend(deb822(text,path))
-        elif path.endswith('.list'):rows.extend(one_line(text,path))
+        if path.endswith('.sources'):rows.extend((where,fields,'deb822') for where,fields in deb822(text,path))
+        elif path.endswith('.list'):rows.extend((where,fields,'one-line') for where,fields in one_line(text,path))
         else:report.add('file_scope','OPEN',path,'Unknown source-file format')
     seen={};active=0;expansions=0
-    for where,fields in rows:
-        if 'enabled' in fields and not boolean(fields['enabled'],'Enabled'):
+    for where,fields,format_ in rows:
+        if format_ == 'deb822' and 'enabled' in fields and not boolean(fields['enabled'],'Enabled'):
             report.add('disabled_source','PASS',where,'Disabled stanza, outside active-source scope');continue
         active+=1
+        known = KNOWN if format_ == 'deb822' else KNOWN - {'enabled'}
         for key in fields:
-            if key not in KNOWN:report.add('field','OPEN',where,'Unknown field '+key)
+            if key not in known:report.add('field','OPEN',where,'Unknown field '+key)
         types=fields.get('types','').split();uris=fields.get('uris','').split();suites=fields.get('suites','').split();components=fields.get('components','').split()
         if not types or not uris or not suites:raise InputError('source needs Types, URIs, Suites')
         if set(types)-{'deb','deb-src'}:raise InputError('unknown package source type')
