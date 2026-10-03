@@ -1,0 +1,35 @@
+{
+  "schema": "project-build-layout.v1",
+  "project": "AptSourceTrustAudit",
+  "author": "dhtfish98",
+  "kind": "python-wheel",
+  "base_public_commit": "47b0074afe49fdc3802946c3ae9077c396b33a16",
+  "restored_inputs": [
+    {
+      "original": "COPYRIGHT.md",
+      "stored": "项目文档/COPYRIGHT.md",
+      "sha256": "0989a74acaf06c56e82a734d27342f0bdf47258b708e88f57de464d95c094502"
+    },
+    {
+      "original": "LICENSE",
+      "stored": "项目文档/LICENSE",
+      "sha256": "de926d6c22d9e061af6158b0f23146ce036bfb2a562f2f406acec2dc4bd8b298"
+    },
+    {
+      "original": "ORIGIN.md",
+      "stored": "项目文档/ORIGIN.md",
+      "sha256": "08ab5a24a37b9345393cea4212268d32db0f0232bac62a19493f7e397e9411c8"
+    },
+    {
+      "original": "README.md",
+      "stored": "项目文档/README.md",
+      "sha256": "495f73b25d9a44fda62b66c21ed14685ec2ed37abc81037777dd4355f1e9a363"
+    },
+    {
+      "original": "VALIDATION.md",
+      "stored": "项目文档/VALIDATION.md",
+      "sha256": "b9ed009d236773fccd66ed244fb4ff4c2a5c1e4971be5c6cbf77a09c71e893e0"
+    }
+  ],
+  "platform_entries": []
+}
