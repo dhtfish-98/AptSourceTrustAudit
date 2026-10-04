@@ -12,7 +12,7 @@ Input: `{"files":{"/etc/apt/sources.list":"deb [signed-by=/etc/apt/keyrings/vend
 
 ## Use and output
 
-Install `artifacts/*.whl` and run `apt-source-trust-audit examples/good.json`, or `python -m apt_source_trust_audit examples/good.json`. JSON findings have PASS/FAIL/OPEN, evidence, explanation and counts. Exit codes: PASS 0, FAIL 1, ERROR 2, OPEN 3. Incomplete/unsupported evidence cannot produce exit 0. Input: regular non-symlink unchanged file, 2 MiB maximum, 32 JSON layers, 100000 nodes, no duplicate keys/nonfinite values; findings cap 20000. Each project is independently packaged with no external runtime dependency.
+Install the published v0.1.2 wheel from GitHub Releases, or run `python3 构建.py --build` from the repository root and install the wheel under the reported `Build/新构建/.../发行/` directory; then run `apt-source-trust-audit examples/good.json`, or `python -m apt_source_trust_audit examples/good.json`. JSON findings have PASS/FAIL/OPEN, evidence, explanation and counts. Exit codes: PASS 0, FAIL 1, ERROR 2, OPEN 3. Incomplete/unsupported evidence cannot produce exit 0. Input: regular non-symlink unchanged file, 2 MiB maximum, 32 JSON layers, 100000 nodes, no duplicate keys/nonfinite values; findings cap 20000. Each project is independently packaged with no external runtime dependency.
 
 ## Verification and limits
 
